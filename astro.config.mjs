@@ -1,5 +1,6 @@
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
+import netlify from '@astrojs/netlify/functions';
 
 export default defineConfig({
   site: "https://astro-moon-landing.netlify.app/",
@@ -8,5 +9,7 @@ export default defineConfig({
     ssr: {
       external: ["@11ty/eleventy-img", "svgo"],
     },
+    output: 'server',
+    adapter: netlify(),
   },
 });
